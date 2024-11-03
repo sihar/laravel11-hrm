@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('work_histories', function (Blueprint $table) {
             $table->id();
-            // $table->integer('employee_id');
             $table->foreignId('employee_id')->constrained(
                 table: 'employees', indexName: 'idx_work_histories1'
             );
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_history');
+        Schema::dropIfExists('work_histories');
     }
 };
